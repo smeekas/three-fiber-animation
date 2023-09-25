@@ -1,14 +1,12 @@
 import { Canvas } from "@react-three/fiber";
-import React from "react";
 import MyObject from "./MyObject";
-import { CameraShake, Environment, OrbitControls } from "@react-three/drei";
+import { Environment, OrbitControls } from "@react-three/drei";
 import Ground from "./Ground";
-import MyBox from "../BasicRotation/MyBox";
 
 function ReflactionComponent() {
   return (
     <>
-      <Canvas dpr={[1, 1.5]} camera={{ fov: 40, position: [0, 2, 15] }}>
+      <Canvas dpr={[1, 1.5]} camera={{ fov: 40, position: [5, 20, 50] }}>
         <directionalLight />
         <ambientLight />
         <OrbitControls
@@ -18,7 +16,7 @@ function ReflactionComponent() {
         />
         <group>
           <MyObject />
-          {/* <MyBox /> */}
+
           <Ground />
         </group>
 

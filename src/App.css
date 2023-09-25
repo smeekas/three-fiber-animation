@@ -15,6 +15,21 @@ body {
 }
 .app {
   height: 100%;
-  /* background-color: bisque; */
-  /* width: 100vw; */
+  position: relative;
+}
+
+.animatiomSelection {
+  z-index: 11;
+  background-color: white;
+  position: absolute;
+}
+.animatiomSelection ul{
+  list-style: none;
+}
+.animatiomSelection ul li{
+  cursor: pointer;
+  padding: 8px;
+}
+.animatiomSelection ul li:hover{
+  background-color: gainsboro;
 }
