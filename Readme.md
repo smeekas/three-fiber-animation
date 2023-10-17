@@ -146,7 +146,7 @@ Below is what you can control...
 - play/pause animation
 - speed of the animation
 - loop animation
-- mix two animation
+- fade In and fade out animation
 - repeat animation
 
 Every animation have name assigned to it.
@@ -158,10 +158,32 @@ const { nodes, materials, animations } = useGLTF([model-path]) as GLTFResult;
 const { actions } = useAnimations(animations, group);
 // group is ref attached to the first group.
 ```
+
 Now you can use this action object to animate 3D model.
 
 action object contain key-value pair of animation name & animation data.
 
 We can use this different kind of animation data.
 
+for an example my 3D model has animation named **anim**.
+so you can play that animation like below..
 
+```javascript
+actions["anim"].play();
+```
+
+you can increase speed of the animation by changing timescale property like below...
+
+```javascript
+actions[key].timeScale = 2;
+// this will double the speed of the animation
+```
+
+you can fade In and fade Out animation like below..
+
+```javascript
+actions[animation-name].fadeOut(0.2);
+actions[animation-name].fadeIn(0.2);
+
+//value pass inside function is duration in seconds..
+```
