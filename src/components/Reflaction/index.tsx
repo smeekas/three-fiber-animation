@@ -16,7 +16,6 @@ function ReflactionComponent() {
         />
         <group>
           <MyObject />
-
           <Ground />
         </group>
 

@@ -1,18 +1,13 @@
 import { Canvas } from "@react-three/fiber";
-import Particles from "./Particles";
-import { Scroll, ScrollControls } from "@react-three/drei";
-
-const Parallax = () => {
+import "./parallax.css";
+import Parallax from "./Parallax";
+const ParallaxContainer = () => {
   return (
     <Canvas>
       <directionalLight />
       <ambientLight />
-      <ScrollControls pages={2}>
-        <Scroll>
-          <Particles />
-        </Scroll>
-      </ScrollControls>
+      <Parallax />
     </Canvas>
   );
 };
-export default Parallax;
+export default ParallaxContainer;

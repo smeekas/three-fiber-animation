@@ -20,8 +20,8 @@ const Particles = () => {
               <Point
                 position={[
                   (0.5 - random()) * width,
-                  (0.5 - random()) * height * 2,
-                  (0.5 - random()) * 20,
+                  (0.5 - random()) * height * 3,
+                  (0.5 - random()) * 25,
                 ]}
                 color={getRandomColor()}
               />

@@ -39,7 +39,7 @@ export function BirdModel(props: BirdProps) {
     if (!actions[key]) return;
     if (animate.current) {
       actions[key].timeScale = props.timeScale;
-
+      // actions[key].
       actions[key].paused = false;
       actions[key].play();
     } else {
