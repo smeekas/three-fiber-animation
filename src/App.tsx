@@ -4,6 +4,7 @@ import ReflactionComponent from "./components/Reflaction";
 import MovingSpace from "./components/MovingSpace";
 import Parallax from "./components/Parallax";
 import { CoatAnimation } from "./components/CoatAnimation";
+import TweenComponent from "./components/Tweening/index";
 import { useState } from "react";
 type AnimationType = {
   name: string;
@@ -32,6 +33,10 @@ function App() {
     {
       name: "3D Model animation",
       component: CoatAnimation,
+    },
+    {
+      name: "Tweening",
+      component: TweenComponent,
     },
   ];
   const SelectedComponent = arr[selectedIndex].component;
