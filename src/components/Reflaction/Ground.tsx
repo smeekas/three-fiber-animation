@@ -1,17 +1,10 @@
-import { MeshReflectorMaterial, useTexture } from "@react-three/drei";
-// import { MeshReflectorMaterialProps } from "@react-three/drei/materials/MeshReflectorMaterial";
-// import React from "react";
-import textureImg from "../../../public/texture.png";
-import React from "react";
+import { MeshReflectorMaterial } from "@react-three/drei";
 
 function Ground() {
-  const texture = useTexture(textureImg);
   return (
-    <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0,-2,0]}>
+    <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -2, 0]}>
       <planeGeometry args={[50, 50]} />
       <MeshReflectorMaterial
-        // roughnessMap={texture}
-
         mirror={1}
         blur={[300, 100]}
         resolution={2048}

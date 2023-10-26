@@ -23,13 +23,19 @@ body {
   background-color: white;
   position: absolute;
 }
-.animatiomSelection ul{
+.animatiomSelection ul {
   list-style: none;
 }
-.animatiomSelection ul li{
+.animatiomSelection ul li {
   cursor: pointer;
   padding: 8px;
 }
-.animatiomSelection ul li:hover{
+.animatiomSelection ul li:hover {
   background-color: gainsboro;
+}
+.message {
+  position: absolute;
+  bottom: 0;
+  padding: 0.5rem;
+  background-color: white;
 }

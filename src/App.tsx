@@ -3,7 +3,7 @@ import "./App.css";
 import ReflactionComponent from "./components/Reflaction";
 import MovingSpace from "./components/MovingSpace";
 import Parallax from "./components/Parallax";
-import { CoatAnimation } from "./components/CoatAnimation";
+import {  ModelAnimation } from "./components/3DAnimation";
 import TweenComponent from "./components/Tweening/index";
 import { useState } from "react";
 type AnimationType = {
@@ -21,6 +21,7 @@ function App() {
     {
       name: "Event based Animation",
       component: ReflactionComponent,
+      message: "hover to stop, click to change color",
     },
     {
       name: "Parallax",
@@ -32,7 +33,9 @@ function App() {
     },
     {
       name: "3D Model animation",
-      component: CoatAnimation,
+      component: ModelAnimation,
+      message:
+        "click to stop animation & increase speed by changing animation speed slider",
     },
     {
       name: "Tweening",
@@ -54,6 +57,7 @@ function App() {
         </ul>
       </div>
       {<SelectedComponent />}
+      {arr[selectedIndex].message && <div className="message">{arr[selectedIndex].message}</div>}
     </div>
   );
 }

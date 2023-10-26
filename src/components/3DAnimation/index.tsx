@@ -4,7 +4,7 @@ import { useRef, Suspense, useState } from "react";
 import { Group } from "three";
 import { BirdModel } from "./BIrdModel";
 import "./styles.css";
-export function CoatAnimation() {
+export function ModelAnimation() {
   const groupRef = useRef<Group | null>(null);
   const [timeScale, setTimeScale] = useState(1);
   return (

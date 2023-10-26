@@ -9,6 +9,7 @@ POC contains following type of animation demo.
 - animating object based on scroll
 - animating object infinitely.
 - animation with 3D models.
+- Tweening animations
 
 ---
 
@@ -182,8 +183,79 @@ actions[key].timeScale = 2;
 you can fade In and fade Out animation like below..
 
 ```javascript
-actions[animation-name].fadeOut(0.2);
-actions[animation-name].fadeIn(0.2);
+actions[animation - name].fadeOut(0.2);
+actions[animation - name].fadeIn(0.2);
 
 //value pass inside function is duration in seconds..
 ```
+
+---
+
+# 6. Tweening animations.
+
+If you want to animate something based on some condition or after some time you can also use tweenjs library.
+
+install is by using following command
+
+```bash
+npm i @tweenjs/tween.js
+```
+
+you can animate camera, 3D object, object's some property and many things...
+
+Below is the example of how we can animate camera.
+
+you can get access to camera using **useThree** hook.
+
+```javascript
+const three = useThree();
+//three.camera give you access to camera
+```
+
+useThree hook provide you access to many things like
+
+- camera
+- mouse
+- pointer
+- clock etc...
+
+Here is the basic structure of how we use TweenJS
+
+```javascript
+const cameraTween = new Tween(intialValue).to(finalValue, duration);
+
+const updatedTween = cameraTween.onUpdate((updated) => {
+  //we will get updated value here which we can use.
+});
+updatedTween.start();
+
+//simplified
+new Tween(intialValue)
+  .to(finalValue, duration)
+  .onUpdate((updated) => {
+    // update here
+  })
+  .start();
+```
+
+Below is how we can animate camera in circular motion.
+
+```javascript
+new Tween({ angle: 0 })
+  .to(
+    {
+      angle: 360,
+    },
+    4000
+  )
+  .onUpdate((updated) => {
+    const x = radius * Math.sin((Math.PI * 2 * updated.angle) / 360);
+    const y = radius * Math.cos((Math.PI * 2 * updated.angle) / 360);
+    three.camera.position.y = x;
+    three.camera.position.x = y;
+  })
+  .start();
+```
+
+Above code will animate camera once only.
+to animate you can chain **repeat()** to the Tween object.

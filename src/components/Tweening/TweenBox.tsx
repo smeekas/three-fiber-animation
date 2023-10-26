@@ -5,10 +5,11 @@ import { Mesh, Vector3 } from "three";
 import { OrbitControls } from "@react-three/drei";
 function TweenBox() {
   const myMesh = useRef<Mesh>(null);
-  const abc = useThree();
+  const three = useThree();
+
   const radius = 10;
   useEffect(() => {
-    abc.camera.lookAt(new Vector3(2, 1, 2));
+    three.camera.lookAt(new Vector3(2, 1, 2));
     if (!myMesh.current) return;
 
     new Tween({ angle: 0 })
@@ -21,12 +22,12 @@ function TweenBox() {
       .onUpdate((updated) => {
         const x = radius * Math.sin((Math.PI * 2 * updated.angle) / 360);
         const y = radius * Math.cos((Math.PI * 2 * updated.angle) / 360);
-        abc.camera.position.y = x;
-        abc.camera.position.x = y;
+        three.camera.position.y = x;
+        three.camera.position.x = y;
       })
       .repeat(10)
       .start();
-  }, []);
+  }, [three.camera]);
 
   useFrame(() => {
     if (myMesh.current) myMesh.current.rotateY(0.02);
@@ -34,7 +35,11 @@ function TweenBox() {
   });
   return (
     <mesh ref={myMesh}>
-      <OrbitControls />
+      <OrbitControls
+        enableRotate={false}
+        enablePan={false}
+        enableZoom={false}
+      />
       <boxGeometry args={[2, 1, 2]} />
       <meshPhongMaterial color="royalblue" />
     </mesh>

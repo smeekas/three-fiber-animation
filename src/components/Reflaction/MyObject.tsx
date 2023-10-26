@@ -1,6 +1,6 @@
 import { OrbitControls } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
-import React, { useRef, useState } from "react";
+import { useRef, useState } from "react";
 import THREE from "three";
 function MyObject() {
   const [color, setColor] = useState("rgb(0,0,255)");

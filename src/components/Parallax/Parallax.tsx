@@ -6,15 +6,15 @@ import ParallaxHtml from "./ParallaxHtml";
 function Parallax() {
   return (
     <ScrollControls pages={2}>
+      <Scroll>
+        <Particles />
+      </Scroll>
       <Scroll html>
         <ParallaxHtml
           heading="html page"
           buttonContent="Click here button"
           top={100}
         />
-      </Scroll>
-      <Scroll>
-        <Particles />
       </Scroll>
     </ScrollControls>
   );
