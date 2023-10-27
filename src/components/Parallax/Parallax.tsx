@@ -5,7 +5,7 @@ import ParallaxHtml from "./ParallaxHtml";
 
 function Parallax() {
   return (
-    <ScrollControls pages={2}>
+    <ScrollControls pages={3}>
       <Scroll>
         <Particles />
       </Scroll>

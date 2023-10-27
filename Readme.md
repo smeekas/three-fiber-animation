@@ -94,6 +94,35 @@ useFrame(() => {
 
 # 3. Animating object based on scroll.
 
+We can also do animation based scroll.
+
+for that we will be using **ScrollControls** and **Scroll** components from **@react-three/drei**.
+
+ScrollControls is used to create scroll container. we have to pass page prop to ScrollControls. page defines how many pages we have in scroll container. each page takes 100% of the screen height.
+
+Inside ScrollContainer we pass **scroll** component with content which act as individual page.below is an example...
+
+```jsx
+<ScrollControls pages={2}>
+  <Scroll>
+    <Particles />
+  </Scroll>
+  <Scroll html={true}>
+    <ParallaxHtml
+      heading="html page"
+      buttonContent="Click here button"
+      top={100}
+    />
+  </Scroll>
+</ScrollControls>
+```
+
+Here 1st scroll component defines first page which renders particles.
+
+to use HTML inside scroll container we have to pass html={true} to **scroll** component. then we can use html inside scroll component.
+
+we can also do horizontal scrolling! just pass horizontal={true} to ScrollControls as prop.
+
 ---
 
 # 4. Animating object infinitely.
