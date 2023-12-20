@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import React, { useCallback, useEffect, useRef } from "react";
+import { useCallback, useEffect, useRef } from "react";
 import { useGLTF, useAnimations } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 import { GLTF } from "three/examples/jsm/loaders/GLTFLoader.js";
@@ -13,15 +13,15 @@ type GLTFResult = GLTF & {
   };
 };
 
-type ActionName = "anim";
-type GLTFActions = Record<ActionName, THREE.AnimationAction>;
+// type ActionName = "anim";
+// type GLTFActions = Record<ActionName, THREE.AnimationAction>;
 
-type ContextType = Record<
-  string,
-  React.ForwardRefExoticComponent<
-    JSX.IntrinsicElements["skinnedMesh"] | JSX.IntrinsicElements["bone"]
-  >
->;
+// type ContextType = Record<
+//   string,
+//   React.ForwardRefExoticComponent<
+//     JSX.IntrinsicElements["skinnedMesh"] | JSX.IntrinsicElements["bone"]
+//   >
+// >;
 type BirdProps = {
   timeScale: number;
 };

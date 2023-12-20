@@ -1,5 +1,4 @@
 import { ScrollControls, Scroll } from "@react-three/drei";
-import React from "react";
 import Particles from "./Particles";
 import ParallaxHtml from "./ParallaxHtml";
 
