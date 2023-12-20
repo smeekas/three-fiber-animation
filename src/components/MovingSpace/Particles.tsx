@@ -17,7 +17,7 @@ function Particles() {
       ]);
     }
     setParts(arr);
-  }, []);
+  }, [height, width]);
 
   useFrame(() => {
     setParts((prev) => {
